@@ -106,20 +106,7 @@ void deleteNodeFromStartList() {
 	start = start->next;
 	free(temp);
 }
-//void deleteNodeFromEndList() {
-//	Node* temp = NULL;
-//	if (start == NULL) {
-//		printf("Error, cannot delete nothing\n");
-//		return;
-//	}
-//	Node* current = start;
-//	while (current->next->next != NULL) {
-//		temp = current;
-//		current = current->next;
-//	}
-//	current->next = NULL;
-//	free(current->next);
-//}
+
 void deleteNodeFromEndList() {
 	if (start == NULL) {
 		printf("Error, cannot delete nothing\n");
