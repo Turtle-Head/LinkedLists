@@ -28,12 +28,14 @@ int main()
 	PrintList();  // Printing LinkedList
 	deleteNodeFromStartList();
 	deleteNodeFromEndList();
-	addNodeEndList(357);
-	addNewNodeBeforeSpecificElementInList(2);
-	addNewNodeAfterSpecificElementInList(2);
-	for(int j = 1; j <= 14; j++){ deleteNodeFromEndList(); }
-	PrintList();
+	addNodeEndList(10101);
 	
+	for(int j = 1; j <= 13; j++){ deleteNodeFromEndList(); }
+	addNewNodeBeforeSpecificElementInList(12);
+	addNewNodeAfterSpecificElementInList(14);
+	PrintList();
+	_CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_DEBUG);
+
 	return 0;
 }
 // Add New Node 
