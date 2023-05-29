@@ -19,9 +19,9 @@ void addNodeEndList(int data);
 void PrintList();	// Print out Linked list function
 void deleteNodeFromStartList();
 void deleteNodeFromEndList();
-void addNewNodeAfterSpecificElementInList(int data);
+void addNewNodeAfterSpecificElementInList(int data, int newdata);
 void addNewNodeToEndOfList(int data);
-void addNewNodeBeforeSpecificElementInList(int data);
+void addNewNodeBeforeSpecificElementInList(int data, int newdata);
 int main()
 {
 	for (int i = 1; i <= 15; i++) { addNewNodeBeginList(i); } // adding 25 nodes to list
@@ -30,9 +30,9 @@ int main()
 	deleteNodeFromEndList();
 	addNodeEndList(10101);
 	
-	for(int j = 1; j <= 13; j++){ deleteNodeFromEndList(); }
-	addNewNodeBeforeSpecificElementInList(12);
-	addNewNodeAfterSpecificElementInList(14);
+	for(int j = 1; j <= 5; j++){ deleteNodeFromEndList(); }
+	addNewNodeBeforeSpecificElementInList(12,11011);
+	addNewNodeAfterSpecificElementInList(14,10111);
 	PrintList();
 	_CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_DEBUG);
 
@@ -133,17 +133,19 @@ void deleteNodeFromEndList() {
 	current->next = NULL;
 }
 
-void addNewNodeAfterSpecificElementInList(int data) {
+void addNewNodeAfterSpecificElementInList(int data, int newdata) {
 	Node* currentNode = start;
+	Node* prevNode = NULL;
 	while (currentNode != NULL) {
 		if (currentNode->data == data) {
 			Node* newNode = (Node*)malloc(sizeof(Node));
-			newNode->data = data + 1;
+			newNode->data = newdata;
 			newNode->next = currentNode->next;
 			currentNode->next = newNode;
 			return;
 		}
 
+		prevNode = currentNode;
 		currentNode = currentNode->next;
 	}
 
@@ -152,11 +154,10 @@ void addNewNodeAfterSpecificElementInList(int data) {
 	newNode->data = data;
 	newNode->next = start;
 	start = newNode;
+}
 
-	}
 
-
-void addNewNodeBeforeSpecificElementInList(int data) {
+void addNewNodeBeforeSpecificElementInList(int data, int newdata) {
 	if (start == NULL) {
 		// If the list is empty, create a new node and make it the start node
 		Node* newNode = (Node*)malloc(sizeof(Node));
@@ -180,7 +181,7 @@ void addNewNodeBeforeSpecificElementInList(int data) {
 		if (currentNode->next->data == data) {
 			// Found the specific element, add the new node before it
 			Node* newNode = (Node*)malloc(sizeof(Node));
-			newNode->data = data - 1;
+			newNode->data = newdata;
 			newNode->next = currentNode->next;
 			currentNode->next = newNode;
 			return;
