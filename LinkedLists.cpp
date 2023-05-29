@@ -54,6 +54,7 @@ void addNewNodeBeginList(int data) { // takes integer for data which makes it ea
 
 void PrintList() {
 	Node* current = start;
+	if (current == NULL) { printf("\nThere is nothing to display\n"); return; }
 	printf("\n -<- Start ->- \n");
 	while (current != NULL)
 	{
