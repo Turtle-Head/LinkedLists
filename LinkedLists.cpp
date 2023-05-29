@@ -17,6 +17,7 @@ Node* start, current; // pointers needed for Linked list
 void addNewNodeBeginList(int data);  // add new node to Linked list function
 void addNodeEndList(int data);
 void PrintList();	// Print out Linked list function
+void ReverseList();
 void deleteNodeFromStartList();
 void deleteNodeFromEndList();
 void addNewNodeAfterSpecificElementInList(int data, int newdata);
@@ -32,8 +33,12 @@ int main()
 	
 	for(int j = 1; j <= 5; j++){ deleteNodeFromEndList(); }
 	addNewNodeBeforeSpecificElementInList(12,11011);
-	addNewNodeAfterSpecificElementInList(14,10111);
+	addNewNodeAfterSpecificElementInList(140,10111);
 	PrintList();
+	printf("\nReversed List:\n");
+	ReverseList();
+	PrintList();
+	
 	_CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_DEBUG);
 
 	return 0;
@@ -62,6 +67,21 @@ void PrintList() {
 		current = current->next;
 	}
 	printf(" -<- End ->- \n");
+}
+
+void ReverseList() {
+	struct Node* prev = NULL;
+	struct Node* current = start;
+	struct Node* next = NULL;
+
+	while (current != NULL) {
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
+
+	start = prev;
 }
 
 void addNodeEndList(int data) {
