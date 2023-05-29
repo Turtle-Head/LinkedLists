@@ -24,13 +24,14 @@ void addNewNodeToEndOfList(int data);
 void addNewNodeBeforeSpecificElementInList(int data);
 int main()
 {
-	for (int i = 1; i <= 10; i++) { addNewNodeBeginList(i); } // adding 25 nodes to list
+	for (int i = 1; i <= 15; i++) { addNewNodeBeginList(i); } // adding 25 nodes to list
 	PrintList();  // Printing LinkedList
 	deleteNodeFromStartList();
 	deleteNodeFromEndList();
 	addNodeEndList(357);
 	addNewNodeBeforeSpecificElementInList(2);
 	addNewNodeAfterSpecificElementInList(2);
+	for(int j = 1; j <= 14; j++){ deleteNodeFromEndList(); }
 	PrintList();
 	
 	return 0;
@@ -103,20 +104,45 @@ void deleteNodeFromStartList() {
 	start = start->next;
 	free(temp);
 }
+//void deleteNodeFromEndList() {
+//	Node* temp = NULL;
+//	if (start == NULL) {
+//		printf("Error, cannot delete nothing\n");
+//		return;
+//	}
+//	Node* current = start;
+//	while (current->next->next != NULL) {
+//		temp = current;
+//		current = current->next;
+//	}
+//	current->next = NULL;
+//	free(current->next);
+//}
 void deleteNodeFromEndList() {
-	Node* temp = NULL;
 	if (start == NULL) {
 		printf("Error, cannot delete nothing\n");
 		return;
 	}
+
 	Node* current = start;
+	Node* temp = NULL;
+
+	if (current->next == NULL) {
+		// Only one node in the list
+		free(current);
+		start = NULL;
+		return;
+	}
+
 	while (current->next->next != NULL) {
 		temp = current;
 		current = current->next;
 	}
-	current->next = NULL;
+
 	free(current->next);
+	current->next = NULL;
 }
+
 void addNewNodeAfterSpecificElementInList(int data) {
 	Node* currentNode = start;
 	while (currentNode != NULL) {
