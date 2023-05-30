@@ -5,7 +5,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
-
+///////////
 struct Node
 {
 	int data;
@@ -21,12 +21,13 @@ void deleteNodeFromStartList();
 void deleteSpecificNodeFromList(int data);
 void deleteNodeFromEndList();
 void addNewNodeAfterSpecificElementInList(int data, int newdata);
-void addNewNodeToEndOfList(int data);
 void addNewNodeBeforeSpecificElementInList(int data, int newdata);
 void menu();
 void findSpecificNode(int data);
+////////////
 int main()
 {
+	// Initilize Default List
 	for (int i = 1; i <= 15; i++) { addNewNodeBeginList(i); } // adding 15 nodes to list
 	
 	menu();
@@ -48,6 +49,7 @@ int main()
 	return 0;
 }
 
+// menu
 void menu() {
 	printf("\n\n\n\n");
 	int choice, data, newdata;
@@ -131,6 +133,7 @@ void menu() {
 	} while (choice != 0);
 }
 
+// find node
 void findSpecificNode(int data)
 {
 	if (start == NULL) {
@@ -156,20 +159,25 @@ void findSpecificNode(int data)
 	}
 }
 
-// Add New Node 
-void addNewNodeBeginList(int data) { // takes integer for data which makes it easy using a for loop to initialize any number of Nodes
-	if (start == NULL) { // check for null just in case
-		start = (Node*)malloc(sizeof(Node));  // assign memory to the struct
-		start->data = data;	// assign data to the struct
-		start->next = NULL;	// set a null 
-		return; // exit error check
+// add node
+void addNewNodeBeginList(int data)
+{
+	struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+
+	if (newNode == NULL) {
+		printf("Memory allocation failed.\n");
+		return;
 	}
-	Node* newNode = (Node*)malloc(sizeof(Node)); // setup memory for the newNode
-	newNode->data = data;		// assign data to the struct
-	newNode->next = start;		// assign start as new node
-	start = newNode;			// swap node to start
+
+	newNode->data = data;
+	newNode->next = start;
+	start = newNode;
+
+	printf("Node with data %d added at the beginning of the linked list.\n", data);
 }
 
+
+// Print list
 void PrintList() {
 	Node* current = start;
 	if (current == NULL) { printf("\nThere is nothing to display\n"); return; }
@@ -182,6 +190,7 @@ void PrintList() {
 	printf(" -<- End ->- \n");
 }
 
+// reverse list
 void ReverseList() {
 	struct Node* prev = NULL;
 	struct Node* current = start;
@@ -197,6 +206,7 @@ void ReverseList() {
 	start = prev;
 }
 
+// add node end
 void addNodeEndList(int data) {
 	Node* current = start;
 	while (current->next != NULL) {
@@ -204,32 +214,12 @@ void addNodeEndList(int data) {
 	}
 	Node* newNode = (Node*)malloc(sizeof(Node)); // setup memory for the newNode
 	newNode->data = data;		// assign data to the struct
-	newNode->next = start;		// assign start as new node
-	start = newNode;			// swap node to start
+	newNode->next = NULL;		// assign start as new node
+	current->next = newNode;			// swap node to start
 };
 
 
-void addNewNodeToEndOfList(int data) {
-	// Create a new node
-	Node* newNode = (Node*)malloc(sizeof(Node));
-	newNode->data = data;
-	newNode->next = NULL;
 
-	if (start == NULL) {
-		// If the list is empty, make the new node the start node
-		start = newNode;
-	}
-	else {
-		// Traverse to the end of the list
-		Node* currentNode = start;
-		while (currentNode->next != NULL) {
-			currentNode = currentNode->next;
-		}
-
-		// Add the new node to the end of the list
-		currentNode->next = newNode;
-	}
-}
 
 
 void deleteNodeFromStartList() {
