@@ -24,6 +24,7 @@ void addNewNodeAfterSpecificElementInList(int data, int newdata);
 void addNewNodeToEndOfList(int data);
 void addNewNodeBeforeSpecificElementInList(int data, int newdata);
 void menu();
+void findSpecificNode(int data);
 int main()
 {
 	for (int i = 1; i <= 15; i++) { addNewNodeBeginList(i); } // adding 15 nodes to list
@@ -52,7 +53,7 @@ void menu() {
 	int choice, data, newdata;
 
 	do {
-		printf("\n-->-LinkedList Menu-<--\n");
+		printf("\n--- LinkedList Menu ---\n");
 		printf("1. Add new node at the beginning\n");
 		printf("2. Add new node at the end\n");
 		printf("3. Print the list\n");
@@ -62,6 +63,7 @@ void menu() {
 		printf("7. Add new node after a specific element\n");
 		printf("8. Add new node before a specific element\n");
 		printf("9. Delete Specific Node From List \n");
+		printf("10. Find specific Node\n");
 		printf("0. Exit\n");
 
 		printf("Enter your choice: ");
@@ -112,6 +114,12 @@ void menu() {
 			printf("Enter the data of the existing element: ");
 			scanf_s("%d", &data);
 			deleteSpecificNodeFromList(data);
+			break;
+		case 10:
+			printf("Enter the data of the existing element: ");
+			scanf_s("%d", &data);
+			findSpecificNode(data);
+			break;
 		case 0:
 			printf("Exiting...\n");
 			break;
@@ -122,6 +130,32 @@ void menu() {
 
 	} while (choice != 0);
 }
+
+void findSpecificNode(int data)
+{
+	if (start == NULL) {
+		printf("Linked list is empty.\n");
+		return;
+	}
+
+	struct Node* temp = start;
+	int position = 1;
+	int found = 0;
+
+	while (temp != NULL) {
+		if (temp->data == data) {
+			printf("Node with data %d found at position %d.\n", data, position);
+			found = 1;
+		}
+		temp = temp->next;
+		position++;
+	}
+
+	if (!found) {
+		printf("Node with data %d not found in the linked list.\n", data);
+	}
+}
+
 // Add New Node 
 void addNewNodeBeginList(int data) { // takes integer for data which makes it easy using a for loop to initialize any number of Nodes
 	if (start == NULL) { // check for null just in case
