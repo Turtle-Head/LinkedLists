@@ -1,2 +1,2 @@
-# LinkedLists || Author: James Ferh
+# LinkedLists || Author: James Fehr
 Linked List Exercise in C
