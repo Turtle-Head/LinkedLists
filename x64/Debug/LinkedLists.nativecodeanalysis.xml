@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+      <FILENAME>LinkedLists.cpp</FILENAME>
+      <LINE>50</LINE>
+      <COLUMN>14</COLUMN>
+    </SFA>
+    <DEFECTCODE>6011</DEFECTCODE>
+    <DESCRIPTION>Dereferencing NULL pointer 'start'. </DESCRIPTION>
+    <FUNCTION>addNewNodeBeginList</FUNCTION>
+    <DECORATED>?addNewNodeBeginList@@YAXH@Z</DECORATED>
+    <FUNCLINE>47</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>4</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+        <FILENAME>LinkedLists.cpp</FILENAME>
+        <LINE>48</LINE>
+        <COLUMN>11</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+        <FILENAME>LinkedLists.cpp</FILENAME>
+        <LINE>49</LINE>
+        <COLUMN>8</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'start' may be NULL</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+        <FILENAME>LinkedLists.cpp</FILENAME>
+        <LINE>50</LINE>
+        <COLUMN>14</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'start' is dereferenced, but may still be NULL</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+      <FILENAME>LinkedLists.cpp</FILENAME>
+      <LINE>55</LINE>
+      <COLUMN>15</COLUMN>
+    </SFA>
+    <DEFECTCODE>6011</DEFECTCODE>
+    <DESCRIPTION>Dereferencing NULL pointer 'newNode'. </DESCRIPTION>
+    <FUNCTION>addNewNodeBeginList</FUNCTION>
+    <DECORATED>?addNewNodeBeginList@@YAXH@Z</DECORATED>
+    <FUNCLINE>47</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>4</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+        <FILENAME>LinkedLists.cpp</FILENAME>
+        <LINE>48</LINE>
+        <COLUMN>11</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+        <FILENAME>LinkedLists.cpp</FILENAME>
+        <LINE>54</LINE>
+        <COLUMN>7</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'newNode' may be NULL</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+        <FILENAME>LinkedLists.cpp</FILENAME>
+        <LINE>55</LINE>
+        <COLUMN>15</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'newNode' is dereferenced, but may still be NULL</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+      <FILENAME>LinkedLists.cpp</FILENAME>
+      <LINE>93</LINE>
+      <COLUMN>15</COLUMN>
+    </SFA>
+    <DEFECTCODE>6011</DEFECTCODE>
+    <DESCRIPTION>Dereferencing NULL pointer 'newNode'. </DESCRIPTION>
+    <FUNCTION>addNodeEndList</FUNCTION>
+    <DECORATED>?addNodeEndList@@YAXH@Z</DECORATED>
+    <FUNCLINE>87</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>4</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+        <FILENAME>LinkedLists.cpp</FILENAME>
+        <LINE>88</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+        <FILENAME>LinkedLists.cpp</FILENAME>
+        <LINE>89</LINE>
+        <COLUMN>22</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+        <FILENAME>LinkedLists.cpp</FILENAME>
+        <LINE>92</LINE>
+        <COLUMN>7</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'newNode' may be NULL</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+        <FILENAME>LinkedLists.cpp</FILENAME>
+        <LINE>93</LINE>
+        <COLUMN>15</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'newNode' is dereferenced, but may still be NULL</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+      <FILENAME>LinkedLists.cpp</FILENAME>
+      <LINE>102</LINE>
+      <COLUMN>15</COLUMN>
+    </SFA>
+    <DEFECTCODE>6011</DEFECTCODE>
+    <DESCRIPTION>Dereferencing NULL pointer 'newNode'. </DESCRIPTION>
+    <FUNCTION>addNewNodeToEndOfList</FUNCTION>
+    <DECORATED>?addNewNodeToEndOfList@@YAXH@Z</DECORATED>
+    <FUNCLINE>99</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>4</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+        <FILENAME>LinkedLists.cpp</FILENAME>
+        <LINE>101</LINE>
+        <COLUMN>7</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'newNode' may be NULL</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+        <FILENAME>LinkedLists.cpp</FILENAME>
+        <LINE>102</LINE>
+        <COLUMN>15</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'newNode' is dereferenced, but may still be NULL</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+      <FILENAME>LinkedLists.cpp</FILENAME>
+      <LINE>174</LINE>
+      <COLUMN>15</COLUMN>
+    </SFA>
+    <DEFECTCODE>6011</DEFECTCODE>
+    <DESCRIPTION>Dereferencing NULL pointer 'newNode'. </DESCRIPTION>
+    <FUNCTION>addNewNodeAfterSpecificElementInList</FUNCTION>
+    <DECORATED>?addNewNodeAfterSpecificElementInList@@YAXHH@Z</DECORATED>
+    <FUNCLINE>156</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>4</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+        <FILENAME>LinkedLists.cpp</FILENAME>
+        <LINE>157</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+        <FILENAME>LinkedLists.cpp</FILENAME>
+        <LINE>158</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+        <FILENAME>LinkedLists.cpp</FILENAME>
+        <LINE>159</LINE>
+        <COLUMN>20</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+        <FILENAME>LinkedLists.cpp</FILENAME>
+        <LINE>173</LINE>
+        <COLUMN>7</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'newNode' may be NULL</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+        <FILENAME>LinkedLists.cpp</FILENAME>
+        <LINE>174</LINE>
+        <COLUMN>15</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'newNode' is dereferenced, but may still be NULL</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+      <FILENAME>LinkedLists.cpp</FILENAME>
+      <LINE>214</LINE>
+      <COLUMN>15</COLUMN>
+    </SFA>
+    <DEFECTCODE>6011</DEFECTCODE>
+    <DESCRIPTION>Dereferencing NULL pointer 'newNode'. </DESCRIPTION>
+    <FUNCTION>addNewNodeBeforeSpecificElementInList</FUNCTION>
+    <DECORATED>?addNewNodeBeforeSpecificElementInList@@YAXHH@Z</DECORATED>
+    <FUNCLINE>180</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>4</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+        <FILENAME>LinkedLists.cpp</FILENAME>
+        <LINE>181</LINE>
+        <COLUMN>11</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+        <FILENAME>LinkedLists.cpp</FILENAME>
+        <LINE>190</LINE>
+        <COLUMN>17</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+        <FILENAME>LinkedLists.cpp</FILENAME>
+        <LINE>199</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+        <FILENAME>LinkedLists.cpp</FILENAME>
+        <LINE>200</LINE>
+        <COLUMN>26</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+        <FILENAME>LinkedLists.cpp</FILENAME>
+        <LINE>213</LINE>
+        <COLUMN>7</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'newNode' may be NULL</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Stark\Documents\Documents\GitHub\VS Projects\C\Pointer\LinkedLists\</FILEPATH>
+        <FILENAME>LinkedLists.cpp</FILENAME>
+        <LINE>214</LINE>
+        <COLUMN>15</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'newNode' is dereferenced, but may still be NULL</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+</DEFECTS>

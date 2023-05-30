@@ -6,7 +6,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//////////////// Linked List needed struct
 struct Node
 {
 	int data;
@@ -19,29 +18,109 @@ void addNodeEndList(int data);
 void PrintList();	// Print out Linked list function
 void ReverseList();
 void deleteNodeFromStartList();
+void deleteSpecificNodeFromList(int data);
 void deleteNodeFromEndList();
 void addNewNodeAfterSpecificElementInList(int data, int newdata);
 void addNewNodeToEndOfList(int data);
 void addNewNodeBeforeSpecificElementInList(int data, int newdata);
+void menu();
 int main()
 {
-	for (int i = 1; i <= 15; i++) { addNewNodeBeginList(i); } // adding 25 nodes to list
-	PrintList();  // Printing LinkedList
-	deleteNodeFromStartList();
-	deleteNodeFromEndList();
-	addNodeEndList(10101);
+	for (int i = 1; i <= 15; i++) { addNewNodeBeginList(i); } // adding 15 nodes to list
 	
-	for(int j = 1; j <= 5; j++){ deleteNodeFromEndList(); }
-	addNewNodeBeforeSpecificElementInList(12,11011);
-	addNewNodeAfterSpecificElementInList(140,10111);
-	PrintList();
-	printf("\nReversed List:\n");
-	ReverseList();
-	PrintList();
+	menu();
+	//PrintList();  // Printing LinkedList
+	//deleteNodeFromStartList();
+	//deleteNodeFromEndList();
+	//addNodeEndList(10101);
+	//
+	//for(int j = 1; j <= 5; j++){ deleteNodeFromEndList(); }
+	//addNewNodeBeforeSpecificElementInList(12,11011);
+	//addNewNodeAfterSpecificElementInList(140,10111);
+	//PrintList();
+	//printf("\nReversed List:\n");
+	//ReverseList();
+	//PrintList();
 	
 	_CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_DEBUG);
 
 	return 0;
+}
+
+void menu() {
+	printf("\n\n\n\n");
+	int choice, data, newdata;
+
+	do {
+		printf("\n-->-LinkedList Menu-<--\n");
+		printf("1. Add new node at the beginning\n");
+		printf("2. Add new node at the end\n");
+		printf("3. Print the list\n");
+		printf("4. Reverse the list\n");
+		printf("5. Delete node from the start\n");
+		printf("6. Delete node from the end\n");
+		printf("7. Add new node after a specific element\n");
+		printf("8. Add new node before a specific element\n");
+		printf("9. Delete Specific Node From List \n");
+		printf("0. Exit\n");
+
+		printf("Enter your choice: ");
+		scanf_s("%d", &choice);
+
+		switch (choice) {
+		case 1:
+			printf("Enter the data for the new node: ");
+			scanf_s("%d", &data);
+			addNewNodeBeginList(data);
+			break;
+		case 2:
+			printf("Enter the data for the new node: ");
+			scanf_s("%d", &data);
+			addNodeEndList(data);
+			break;
+		case 3:
+			printf("The linked list: ");
+			PrintList();
+			break;
+		case 4:
+			printf("Reversing the linked list...\n");
+			ReverseList();
+			break;
+		case 5:
+			printf("Deleting node from the start...\n");
+			deleteNodeFromStartList();
+			break;
+		case 6:
+			printf("Deleting node from the end...\n");
+			deleteNodeFromEndList();
+			break;
+		case 7:
+			printf("Enter the data of the existing element: ");
+			scanf_s("%d", &data);
+			printf("Enter the data for the new node: ");
+			scanf_s("%d", &newdata);
+			addNewNodeAfterSpecificElementInList(data, newdata);
+			break;
+		case 8:
+			printf("Enter the data of the existing element: ");
+			scanf_s("%d", &data);
+			printf("Enter the data for the new node: ");
+			scanf_s("%d", &newdata);
+			addNewNodeBeforeSpecificElementInList(data, newdata);
+			break;
+		case 9:
+			printf("Enter the data of the existing element: ");
+			scanf_s("%d", &data);
+			deleteSpecificNodeFromList(data);
+		case 0:
+			printf("Exiting...\n");
+			break;
+		default:
+			printf("Invalid choice. Please try again.\n");
+			break;
+		}
+
+	} while (choice != 0);
 }
 // Add New Node 
 void addNewNodeBeginList(int data) { // takes integer for data which makes it easy using a for loop to initialize any number of Nodes
@@ -219,29 +298,37 @@ void addNewNodeBeforeSpecificElementInList(int data, int newdata) {
 
 void deleteSpecificNodeFromList(int data) {
 	if (start == NULL) {
-		// If the list is empty, return as there is nothing to delete
+		printf("Linked list is empty.\n");
 		return;
 	}
 
-	if (start->data == data) {
-		// If the start node has the specific element, delete it
-		Node* nodeToDelete = start;
-		start = start->next;
-		free(nodeToDelete);
+	struct Node* temp = start;
+	struct Node* prev = NULL;
+
+	// If the key is found at the start of the list
+	if (temp != NULL && temp->data == data) {
+		start = temp->next;  // Change the start pointer
+		free(temp);  // Free the memory of the node
+		printf("Node with key %d deleted successfully.\n", data);
 		return;
 	}
 
-	Node* currentNode = start;
-	while (currentNode->next != NULL) {
-		if (currentNode->next->data == data) {
-			// Found the specific element, delete the node
-			Node* nodeToDelete = currentNode->next;
-			currentNode->next = currentNode->next->next;
-			free(nodeToDelete);
-			return;
-		}
-		currentNode = currentNode->next;
+	// Traverse the list to find the node with the given key
+	while (temp != NULL && temp->data != data) {
+		prev = temp;
+		temp = temp->next;
 	}
+
+	// If the key is not found in the list
+	if (temp == NULL) {
+		printf("Node with key %d not found.\n", data);
+		return;
+	}
+
+	// Found the node with the given key, delete it
+	prev->next = temp->next;
+	free(temp);
+	printf("Node with key %d deleted successfully.\n", data);
 }
 
 void deleteAfterSpecificNodeFromList(int data) {
