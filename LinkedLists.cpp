@@ -24,9 +24,12 @@ void addNewNodeAfterSpecificElementInList(int data, int newdata);
 void addNewNodeBeforeSpecificElementInList(int data, int newdata);
 void menu();
 void findSpecificNode(int data);
+void freeLinkedList(struct Node* head);
 ////////////
 int main()
 {
+	struct Node* head = NULL;
+
 	// Initilize Default List
 	for (int i = 1; i <= 15; i++) { addNewNodeBeginList(i); } // adding 15 nodes to list
 	
@@ -45,6 +48,10 @@ int main()
 	//PrintList();
 	
 	_CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_DEBUG);
+
+	// Free up the memory
+	freeLinkedList(head);
+	
 
 	return 0;
 }
@@ -159,7 +166,7 @@ void findSpecificNode(int data)
 	}
 }
 
-// add node
+// add node beginning
 void addNewNodeBeginList(int data)
 {
 	struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
@@ -218,10 +225,7 @@ void addNodeEndList(int data) {
 	current->next = newNode;			// swap node to start
 };
 
-
-
-
-
+// add node start
 void deleteNodeFromStartList() {
 	if (start == NULL) {
 		return;
@@ -231,6 +235,7 @@ void deleteNodeFromStartList() {
 	free(temp);
 }
 
+// delete from end 
 void deleteNodeFromEndList() {
 	if (start == NULL) {
 		printf("Error, cannot delete nothing\n");
@@ -256,6 +261,7 @@ void deleteNodeFromEndList() {
 	current->next = NULL;
 }
 
+// add after item
 void addNewNodeAfterSpecificElementInList(int data, int newdata) {
 	Node* currentNode = start;
 	Node* prevNode = NULL;
@@ -279,7 +285,7 @@ void addNewNodeAfterSpecificElementInList(int data, int newdata) {
 	start = newNode;
 }
 
-
+// add before
 void addNewNodeBeforeSpecificElementInList(int data, int newdata) {
 	if (start == NULL) {
 		// If the list is empty, create a new node and make it the start node
@@ -319,7 +325,7 @@ void addNewNodeBeforeSpecificElementInList(int data, int newdata) {
 	currentNode->next = newNode;
 }
 
-
+// delete item
 void deleteSpecificNodeFromList(int data) {
 	if (start == NULL) {
 		printf("Linked list is empty.\n");
@@ -355,6 +361,7 @@ void deleteSpecificNodeFromList(int data) {
 	printf("Node with key %d deleted successfully.\n", data);
 }
 
+// delete after item
 void deleteAfterSpecificNodeFromList(int data) {
 	if (start == NULL) {
 		// If the list is empty, return as there is nothing to delete
@@ -374,6 +381,7 @@ void deleteAfterSpecificNodeFromList(int data) {
 	}
 }
 
+// delete before item
 void deleteBeforeSpecificNodeFromList(int data) {
 	if (start == NULL || start->next == NULL) {
 		// If the list is empty or has only one node, return as there is nothing to delete before
@@ -399,6 +407,19 @@ void deleteBeforeSpecificNodeFromList(int data) {
 		}
 		currentNode = currentNode->next;
 	}
+}
+
+// Free memory back up before exiting program
+void freeLinkedList(struct Node* head) {
+	struct Node* current = head;
+	struct Node* next;
+
+	while (current != NULL) {
+		next = current->next;
+		free(current);
+		current = next;
+	}
+	printf("\n--==| Memory freed up |==--\n\n");
 }
 
 
